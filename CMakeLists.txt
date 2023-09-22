@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(PrometheusExample)
+project(PrometheusCPPClientExample)
 
 # 设置C++标准版本
 set(CMAKE_CXX_STANDARD 17)

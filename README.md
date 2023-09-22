@@ -43,7 +43,7 @@ make
 ```
 ### run
 ```
-./main -p 9090
+./main -p 8080
 ```
 ### test
 http://127.0.0.1:8080/metrics

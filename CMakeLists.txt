@@ -8,11 +8,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 设置编译器为32位
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
+# 设置编译器为64位
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m64")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64")
 
-# 指定Prometheus C++库的路径
+# 指定Prometheus 32位C++库的路径
 set(PROMETHEUS_CPP_PATH "./third_party/prometheus/32bit")
+# 指定Prometheus 64位C++库的路径
 # set(PROMETHEUS_CPP_PATH "./third_party/prometheus/64bit")
 
 # 导入Prometheus C++库的包含目录

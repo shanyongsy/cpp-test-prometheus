@@ -37,14 +37,8 @@ cmake --install .
 ```
 mkdir _build
 cd _build
-cmake -DCMAKE_C_FLAGS=-m32 -DCMAKE_CXX_FLAGS=-m32 -DCMAKE_EXE_LINKER_FLAGS=-m32 -DCMAKE_SHARED_LINKER_FLAGS=-m32 ..
-make
-```
-### build 64bit
-```
-mkdir _build
-cd _build
-cmake -DCMAKE_C_FLAGS=-m64 -DCMAKE_CXX_FLAGS=-m64 -DCMAKE_EXE_LINKER_FLAGS=-m64 -DCMAKE_SHARED_LINKER_FLAGS=-m64 ..
+"Modify CMakeLists.txt for 32bit or 64bit"
+cmake ..
 make
 ```
 ### run

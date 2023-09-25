@@ -24,13 +24,14 @@ int main(int argc, char* argv[]) {
 
     for (;;) {
         std::this_thread::sleep_for(std::chrono::seconds(1));
-        const auto random_value = std::rand();
+        const auto random_value_1 = std::rand();
+        const auto random_value_2 = std::rand();
 
-        PrometheusMgr::GetInstace().UpdateOnlineUser(random_value % 1000);
+        PrometheusMgr::GetInstace().UpdateOnlineUser(random_value_1 % 1000);
 
-        const int32_t msgPrimaryID = random_value % 4;
-        const int32_t msgSecondaryID = random_value % 4;
-        const int32_t msgSize = random_value % 10000;
+        const int32_t msgPrimaryID = random_value_1 % 4;
+        const int32_t msgSecondaryID = random_value_2 % 4;
+        const int32_t msgSize = random_value_1 % 10000;
         PrometheusMgr::GetInstace().IncrMsgInfo(true, msgPrimaryID, msgSecondaryID, msgSize);
     }
 

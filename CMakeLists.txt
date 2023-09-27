@@ -15,9 +15,9 @@ set(cpp_compiler_flags "-std=c++17")
 include_directories("./include")
 
 # 指定Prometheus 32位C++库的路径
-set(PROMETHEUS_CPP_PATH "./third_party/prometheus/32bit")
+set(PROMETHEUS_CPP_PATH "./third_party/prometheus/x86")
 # 指定Prometheus 64位C++库的路径
-# set(PROMETHEUS_CPP_PATH "./third_party/prometheus/64bit")                                                                                                                                                                                                                                                                                                                                                                                             
+# set(PROMETHEUS_CPP_PATH "./third_party/prometheus/x86_64")                                                                                                                                                                                                                                                                                                                                                                                             
 
 # 导入Prometheus C++库的包含目录
 find_package(prometheus-cpp REQUIRED HINTS ${PROMETHEUS_CPP_PATH})

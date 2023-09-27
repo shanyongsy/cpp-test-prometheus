@@ -14,13 +14,6 @@ set(cpp_compiler_flags "-std=c++17")
 
 include_directories("./include")
 
-# 指定Prometheus 32位C++库的路径
-set(PROMETHEUS_CPP_PATH "./third_party/prometheus/x86")
-# 指定Prometheus 64位C++库的路径
-# set(PROMETHEUS_CPP_PATH "./third_party/prometheus/x86_64")                                                                                                                                                                                                                                                                                                                                                                                             
-
-# 导入Prometheus C++库的包含目录
-find_package(prometheus-cpp REQUIRED HINTS ${PROMETHEUS_CPP_PATH})
 # set(compiler_flags "-m32 -pthread -Werror -fstack-protector -ggdb")
 set(compiler_flags "-m32 -pthread -Werror -fstack-protector -ggdb")
 
@@ -40,6 +33,20 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${linker_flags}")
 set(SRC_LIST
   main.cpp
 )
+
+string(FIND "${CMAKE_CXX_FLAGS}" "-m32" IS_32_BIT)
+if(IS_32_BIT GREATER -1)
+  # prometheus_x86
+  set(PROMETHEUS_CPP_PATH "./third_party/prometheus/x86")
+  message("-- use prometheus_x86")
+else()
+  # prometheus_x86_64
+  set(PROMETHEUS_CPP_PATH "./third_party/prometheus/x86_64")
+  message("-- use prometheus_x86_64")
+endif()
+
+# 导入Prometheus C++库的包含目录
+find_package(prometheus-cpp REQUIRED HINTS ${PROMETHEUS_CPP_PATH})
 
 # 添加可执行文件
 add_executable(main ${SRC_LIST})

@@ -1,4 +1,4 @@
-prefix=/home/shanyong/code/prometheus-cpp/install_32
+prefix=/home/shanyong/code/cpp-test-prometheus/third_party/prometheus/install_x86
 exec_prefix=${prefix}
 includedir=${prefix}/include
 libdir=${exec_prefix}/lib

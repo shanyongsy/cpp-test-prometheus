@@ -35,5 +35,8 @@ cmake --build . --parallel 4
 #install the libraries and headers
 cmake --install .
 
+cd ../..
+rm -rf prometheus-cpp
+
 echo "Done building prometheus-cpp-x86. You can find the libraries and headers in the install_x86 directory."
 echo "Done building prometheus-cpp-x86_64. You can find the libraries and headers in the install_x86_64 directory."
